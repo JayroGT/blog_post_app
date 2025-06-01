@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <style>
+      body { font-family: Arial, sans-serif; }
+      .container { 
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px; 
+      }
+
+      .header {
+        background-color: #f8f9fa;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .content {
+        margin: 20px 0;
+      }
+      
+      .feedback-box {
+        background-color: #e9ecef;
+        padding: 15px;
+        border-radius: 5px;
+      }
+
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h2>New Feedback on Your Blog Post</h2>
+      </div>
+      
+      <div class="content">
+        <p>👋 Hello <%= @author %>,</p>
+        
+        <p>You have received new comment on your blog "<strong><%= @blog_post.title %></strong>".</p>
+        
+        <div class="feedback-box">
+          <p><strong>From:</strong> <%= @feedback.commenter_name %> (<%= @feedback.commenter_email %>)</p>
+          <p><strong>Feedback:</strong></p>
+          <p><%= simple_format(@feedback.content) %></p>
+        </div>
+        
+        <p>Thank you for using our platform! 😊</p>
+        
+        <p>Best regards,<br>
+        DuckNCover Team</p>
+      </div>
+    </div>
+  </body>
+</html>
