@@ -1,9 +1,8 @@
 class Feedback < ApplicationRecord
   belongs_to :blog_post
 
-  validates :content, presence: true
-  validates :commenter_name, presence: true
-  validates :commenter_email, presence: true, format: { with: URI::MailTo::EMAIL_REGEXP }
+  validates :content, :commenter_name, :commenter_email, presence: true
+  validates :commenter_email, format: { with: URI::MailTo::EMAIL_REGEXP }
 
   after_create :send_notification_email
 

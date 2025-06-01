@@ -4,8 +4,10 @@ RSpec.describe BlogPost, type: :model do
   describe 'validations' do
     it 'is valid with valid attributes' do
       blog_post = build(:blog_post)
+      blog_post.content = "Contenido válido"
       expect(blog_post).to be_valid
     end
+
 
     it 'is not valid without a title' do
       blog_post = build(:blog_post, title: nil)
@@ -13,9 +15,14 @@ RSpec.describe BlogPost, type: :model do
     end
 
     it 'is not valid without content' do
-      blog_post = build(:blog_post, content: nil)
+      blog_post = build(:blog_post)
+      blog_post.content = nil
+      expect(blog_post).not_to be_valid
+
+      blog_post.content = ActionText::Content.new('') # contenido vacío
       expect(blog_post).not_to be_valid
     end
+
 
     it 'is not valid without author_name' do
       blog_post = build(:blog_post, author_name: nil)
@@ -41,8 +48,8 @@ RSpec.describe BlogPost, type: :model do
 
     it 'destroys associated feedbacks when deleted' do
       blog_post = create(:blog_post)
-      feedback = create(:feedback, blog_post: blog_post)
-      
+      create(:feedback, blog_post: blog_post)  # solo crear, sin asignar
+
       expect { blog_post.destroy }.to change { Feedback.count }.by(-1)
     end
   end
