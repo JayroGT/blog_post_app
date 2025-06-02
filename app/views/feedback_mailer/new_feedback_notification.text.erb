@@ -1,3 +1,13 @@
-Feedback#new_feedback_notification
+Hello <%= @author %>,
 
-<%= @greeting %>, find me in app/views/feedback_mailer/new_feedback_notification.text.erb
+You have received a new comment on your blog "<%= @blog_post.title %>".
+
+From: <%= @feedback.commenter_name %> (<%= @feedback.commenter_email %>)
+
+Feedback:
+<%= @feedback.content %>
+
+Thank you for using our platform! 😊
+
+Best regards,
+Our Team
