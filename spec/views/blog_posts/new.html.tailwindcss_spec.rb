@@ -1,5 +1,8 @@
-require 'rails_helper'
-
-RSpec.describe "blog_posts/new.html.tailwindcss", type: :view do
-  pending "add some examples to (or delete) #{__FILE__}"
+RSpec.describe "blog_posts/new.html.erb", type: :view do
+  it "displays the new blog post form" do
+    assign(:blog_post, BlogPost.new)
+    render
+    expect(rendered).to match /New Blog Post/
+    expect(rendered).to match /Save/
+  end
 end

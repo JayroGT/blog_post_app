@@ -1,5 +1,5 @@
 class FeedbackMailer < ApplicationMailer
-  default from: 'noreply@duckncover.com'
+  default from: 'noreply@blogapp.com'
 
   def new_feedback_notification(feedback)
     @feedback = feedback
@@ -8,7 +8,7 @@ class FeedbackMailer < ApplicationMailer
 
     mail(
       to: @blog_post.author_email,
-      subject: "New feedback on your blog post: #{@blog_post.title}"
+      subject: "New feedback on your blog: #{@blog_post.title}"
     )
   end
 end

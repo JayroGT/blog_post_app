@@ -1,3 +1,10 @@
+<%= link_to blog_posts_path, class: 'px-4 py-2 bg-gray-200 rounded hover:bg-gray-300' do %>
+  <i class="fa-solid fa-arrow-left"></i> Back
+<% end %>
+<h1>
+  <%= @blog_post.new_record? ? "New Blog Post" : "Editing" %>
+</h1>
+
 <%= form_with(model: blog_post, local: true, class: "space-y-6 max-w-xl mx-auto") do |form| %>
   <% if blog_post.errors.any? %>
     <div class="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded">
