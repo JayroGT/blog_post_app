@@ -5,7 +5,7 @@ RSpec.describe "blog_posts/show.html.erb", type: :view do
     assign(:feedback, Feedback.new)
 
     render
-    expect(rendered).to match /Title/
-    expect(rendered).to match /Content/
+    expect(rendered).to match include("Title")
+    expect(rendered).to match include("Content")
   end
 end

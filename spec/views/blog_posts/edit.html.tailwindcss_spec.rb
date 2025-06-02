@@ -12,6 +12,6 @@ RSpec.describe "blog_posts/edit", type: :view do
     render
 
     expect(rendered).to have_selector("form")
-    expect(rendered).to match /Edit title/
+    expect(rendered).to include("Edit title")
   end
 end

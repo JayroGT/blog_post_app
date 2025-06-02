@@ -9,7 +9,7 @@ RSpec.describe "blog_posts/index", type: :view do
 
     render
 
-    expect(rendered).to match /Post 1/
-    expect(rendered).to match /Post 2/
+    expect(rendered).to match include("Post 1")
+    expect(rendered).to match include("Post 2")
   end
 end
