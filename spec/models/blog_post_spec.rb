@@ -48,7 +48,7 @@ RSpec.describe BlogPost, type: :model do
 
     it 'destroys associated feedbacks when deleted' do
       blog_post = create(:blog_post)
-      create(:feedback, blog_post: blog_post)  # solo crear, sin asignar
+      create(:feedback, blog_post: blog_post)
 
       expect { blog_post.destroy }.to change { Feedback.count }.by(-1)
     end
