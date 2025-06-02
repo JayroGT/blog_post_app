@@ -19,7 +19,7 @@ RSpec.describe BlogPost, type: :model do
       blog_post.content = nil
       expect(blog_post).not_to be_valid
 
-      blog_post.content = ActionText::Content.new('') # contenido vacío
+      blog_post.content = ActionText::Content.new('')
       expect(blog_post).not_to be_valid
     end
 
