@@ -1,24 +1,84 @@
-# README
+# ✨ BlogPostApp
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A simple blog post app built with Ruby on Rails 7 and TailwindCSS.
 
-Things you may want to cover:
+## 🧰 Requirements
 
-* Ruby version
+- ✅ WSL (Windows Subsystem for Linux)
+- 💎 Ruby 3.4.1  
+- 🚂 Rails 7.1.3  
+- 🐘 SQLite3  
 
-* System dependencies
+---
 
-* Configuration
+## 🛠️ Getting Started
 
-* Database creation
+1. **Clone the repo**
 
-* Database initialization
+```bash
+git clone https://github.com/JayroGT/blog_post_app.git
+cd blog_post_app
+```
 
-* How to run the test suite
+2. **Install gems**
 
-* Services (job queues, cache servers, search engines, etc.)
+```bash
+bundle install
+```
 
-* Deployment instructions
+3. **Set up the database**
 
-* ...
+```bash
+bin/rails db:setup
+```
+
+> Or if you already have some data:
+
+```bash
+bin/rails db:create db:migrate
+```
+
+4. **Start the server**
+
+```bash
+bin/rails server
+```
+
+📍 Visit: [http://localhost:3000](http://localhost:3000)
+
+---
+
+## ✅ Running Tests
+
+Run tests with:
+
+```bash
+bundle exec rspec
+```
+
+---
+
+## 🔧 Useful Dev Tools
+
+- 🎨 TailwindCSS for styling
+- ⚡ Turbo and Stimulus (Hotwire) for interactivity
+- 📬 `letter_opener_web` to preview sent emails (`/letter_opener`)
+
+---
+
+## 📝 Notes
+
+- Built and tested in **WSL** — make sure Ruby, Node, and Yarn are installed if needed.
+- If you add new gems, don’t forget to run `bundle install` again.
+
+---
+
+That’s it! 🚀
+
+
+
+
+## 📄 License
+
+This project is licensed under the [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) — no commercial use allowed.
+
